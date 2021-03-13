@@ -1,0 +1,14 @@
+
+<div class="container">
+  <%= form_tag movies_path, method: :get, class: 'my-3' do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a series"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary btn-block my-3" %>
+  <% end %>
+  <div id="movies" style="display: grid; grid-template-columns: 1fr 1fr 1fr; grid-gap: 16px;">
+    <%= render @tv_shows %>
+  </div>
+</div>
